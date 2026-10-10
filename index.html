@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Portfolio of May Myat Mon, project manager (PMP, PSM I): career timeline, IT projects, responsibilities and contact details.">
+<style>html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>May Myat Mon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one column page. A career Gantt chart leads, since planning and timelines are the craft; projects follow as charter-style cards with fixed fields. */
+:root {
+  --bg: #e6ecff;
+  --surface: #ffffff;
+  --ink: #0d1530;
+  --muted: #4f5b7a;
+  --line: #c9d3f2;
+  --accent: #1830ff;
+  --accent-soft: #d0d9ff;
+  --bar-other: #ffa91f;
+  --marker: #ff2e63;
+  --on-accent: #ffffff;
+  --font-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b1022;
+    --surface: #141c36;
+    --ink: #e8ecf7;
+    --muted: #9ba6c2;
+    --line: #28325a;
+    --accent: #8399ff;
+    --accent-soft: #1f2a66;
+    --bar-other: #f0a93a;
+    --marker: #ff5c8a;
+    --on-accent: #0b1022;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0b1022;
+  --surface: #141c36;
+  --ink: #e8ecf7;
+  --muted: #9ba6c2;
+  --line: #28325a;
+  --accent: #8399ff;
+  --accent-soft: #1f2a66;
+  --bar-other: #f0a93a;
+  --marker: #ff5c8a;
+  --on-accent: #0b1022;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  padding-inline: 1rem;
+  padding-block: 0 4rem;
+}
+.wrap { max-width: 68rem; margin-inline: auto; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; line-height: 1.1; }
+p { margin: 0; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+.mono { font-family: var(--font-mono); }
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* top bar */
+.top { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-content: space-between; align-items: baseline; padding-block: 1.25rem; border-bottom: 1px solid var(--line); }
+.top strong { font-family: var(--font-display); font-size: 1.05rem; }
+.top nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; font-size: 0.9rem; }
+.top nav a { color: var(--muted); text-decoration: none; }
+.top nav a:hover { color: var(--accent); }
+
+/* hero */
+.hero { padding-block: 3rem 2rem; display: grid; gap: 1.5rem; }
+.hero h1 { color: var(--accent); font-size: clamp(3rem, 11vw, 7rem); font-weight: 700; letter-spacing: -0.035em; line-height: 0.95; }
+.lead { font-size: clamp(1.1rem, 2.4vw, 1.4rem); line-height: 1.5; max-width: 40rem; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 1rem 2rem; margin: 0.5rem 0 0; padding: 0; max-width: 52rem; }
+.facts div { border-top: 3px solid var(--accent); padding-top: 0.6rem; min-width: 0; }
+.facts dt { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.facts dd { margin: 0.2rem 0 0; font-weight: 500; }
+
+section { padding-block: 3rem 1rem; }
+.sec-head .eyebrow { color: var(--accent); }
+.hero-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.btn { display: inline-block; font-weight: 600; text-decoration: none; padding: 0.7rem 1.4rem; border-radius: 999px; background: var(--accent); color: var(--on-accent); border: 2px solid var(--accent); }
+.btn:hover { background: transparent; color: var(--accent); }
+.btn.ghost { background: transparent; color: var(--accent); }
+.btn.ghost:hover { background: var(--accent); color: var(--on-accent); }
+.sec-head { display: grid; gap: 0.5rem; margin-bottom: 1.5rem; max-width: 40rem; }
+.sec-head h2 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); letter-spacing: -0.02em; }
+.sec-head p { color: var(--muted); }
+
+/* gantt */
+.gantt { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 1rem 1.25rem 0.5rem; }
+.g-axis, .g-row { display: grid; grid-template-columns: minmax(0, 22rem) minmax(0, 1fr); column-gap: 1.5rem; }
+.g-axis { padding-bottom: 0.5rem; }
+.g-years { position: relative; height: 1.2rem; font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); }
+.g-years span { position: absolute; top: 0; transform: translateX(-50%); }
+.g-row { align-items: center; padding-block: 0.85rem; border-top: 1px solid var(--line); }
+.g-info { min-width: 0; }
+.g-info h3 { font-size: 1.05rem; letter-spacing: -0.01em; }
+.g-meta { font-family: var(--font-mono); font-size: 0.74rem; color: var(--muted); margin-top: 0.15rem; }
+.g-note { font-size: 0.88rem; color: var(--muted); margin-top: 0.3rem; }
+.g-track { position: relative; height: 1.1rem; }
+.g-tick { position: absolute; top: -0.4rem; bottom: -0.4rem; width: 1px; background: var(--line); }
+.g-now { position: absolute; top: -0.9rem; bottom: -0.9rem; width: 2px; background: var(--marker); z-index: 2; }
+.g-bar { position: absolute; top: 0; bottom: 0; border-radius: 3px; z-index: 1; }
+.g-bar.it { background: var(--accent); }
+.g-bar.other { background: var(--bar-other); }
+.g-bar.study { background: var(--accent-soft); border: 1.5px dashed var(--accent); }
+.legend { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; padding: 0.9rem 0 0.6rem; border-top: 1px solid var(--line); font-size: 0.8rem; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 0.45rem; }
+.legend i { display: inline-block; width: 1.1rem; height: 0.6rem; border-radius: 2px; }
+.legend .l-it { background: var(--accent); }
+.legend .l-other { background: var(--bar-other); }
+.legend .l-study { background: var(--accent-soft); border: 1.5px dashed var(--accent); }
+.legend .l-now { width: 2px; height: 0.9rem; background: var(--marker); }
+
+/* projects */
+.filters { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; }
+.filters button {
+  font: inherit; font-size: 0.88rem; font-weight: 500; cursor: pointer;
+  padding: 0.45rem 0.95rem; border-radius: 999px;
+  background: transparent; color: var(--ink); border: 1px solid var(--line);
+}
+.filters button:hover { border-color: var(--accent); }
+.filters button[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 21rem), 1fr)); gap: 1rem; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 1.25rem; display: flex; flex-direction: column; gap: 0.8rem; min-width: 0; }
+.card .tag { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+.card h3 { font-size: 1.3rem; letter-spacing: -0.015em; }
+.card p { font-size: 0.95rem; }
+.card .out { font-size: 0.9rem; font-weight: 500; }
+.card .out b { font-family: var(--font-mono); font-weight: 500; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-right: 0.4rem; }
+.card dl { margin: auto 0 0; padding-top: 0.8rem; border-top: 1px solid var(--line); display: grid; grid-template-columns: 4.5rem minmax(0, 1fr); gap: 0.3rem 0.75rem; font-size: 0.86rem; }
+.card dt { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding-top: 0.1rem; }
+.card dd { margin: 0; }
+.card[hidden] { display: none; }
+
+/* responsibilities */
+.duties { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr)); gap: 2rem 3rem; }
+.duty { border-top: 3px solid var(--accent); padding-top: 0.8rem; min-width: 0; }
+.duty h3 { font-size: 1.25rem; letter-spacing: -0.01em; }
+.duty ul { margin: 0.7rem 0 0; padding-left: 1.1rem; display: grid; gap: 0.4rem; }
+.duty li::marker { color: var(--accent); }
+
+/* credentials */
+.cred { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: 2rem; }
+.cred h3 { font-size: 1.1rem; margin-bottom: 0.6rem; }
+.cred ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; }
+.cred li small { display: block; color: var(--muted); font-size: 0.85rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.chips span { font-size: 0.85rem; padding: 0.25rem 0.65rem; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); }
+
+/* contact */
+.contact { background: var(--accent); color: var(--on-accent); border-radius: 6px; padding: clamp(1.25rem, 4vw, 2.5rem); display: grid; gap: 1.25rem; }
+.contact h2 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); letter-spacing: -0.02em; }
+.contact p { max-width: 36rem; opacity: 0.85; }
+.c-list { display: grid; gap: 0.75rem; }
+.c-item { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1rem; }
+.c-item .lbl { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.7; min-width: 5.5rem; }
+.c-item .val { font-family: var(--font-mono); font-size: 0.95rem; overflow-wrap: anywhere; min-width: 0; user-select: all; }
+.c-item .val a { color: inherit; }
+.copy { font: inherit; font-size: 0.8rem; cursor: pointer; padding: 0.25rem 0.7rem; border-radius: 999px; background: transparent; color: inherit; border: 1px solid currentColor; opacity: 0.85; }
+.copy:hover { opacity: 1; }
+.contact :focus-visible { outline-color: var(--on-accent); }
+
+footer { padding-top: 2rem; font-size: 0.82rem; color: var(--muted); }
+
+@media (max-width: 760px) {
+  .g-axis, .g-row { grid-template-columns: minmax(0, 1fr); row-gap: 0.6rem; }
+  .g-axis > :first-child { display: none; }
+  .gantt { padding-inline: 1rem; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .filters button, .copy { transition: background 0.15s, color 0.15s, border-color 0.15s, opacity 0.15s; }
+}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <strong>May Myat Mon</strong>
+    <nav aria-label="Sections">
+      <a href="#career">Career</a>
+      <a href="#projects">Projects</a>
+      <a href="#work">Responsibilities</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <a href="https://www.linkedin.com/in/may-myat-mon-584a8654/" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <p class="eyebrow">Project Manager · PMP · PSM I</p>
+      <h1>May Myat Mon</h1>
+      <p class="lead">I run IT projects from requirements to go-live: software, mobile apps, ERP and infrastructure. Six years in project management for hospital, finance, insurance and construction clients, and now an MSc student in Managing with Data &amp; Artificial Intelligence.</p>
+      <div class="hero-links">
+        <a class="btn" href="https://www.linkedin.com/in/may-myat-mon-584a8654/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+        <a class="btn ghost" href="#projects">See my projects</a>
+      </div>
+      <dl class="facts">
+        <div><dt>Certified</dt><dd>PMP (PMI), PSM I (Scrum.org)</dd></div>
+        <div><dt>Delivery</dt><dd>Agile Scrum and Waterfall</dd></div>
+        <div><dt>Languages</dt><dd>Myanmar (native), English (professional working proficiency), French (beginner)</dd></div>
+        <div><dt>Studying</dt><dd>Grenoble Ecole de Management</dd></div>
+      </dl>
+    </div>
+
+    <section id="career" aria-labelledby="career-h">
+      <div class="sec-head">
+        <p class="eyebrow">Timeline</p>
+        <h2 id="career-h">Career so far</h2>
+        <p>Thirteen years of work, from first-line IT support to managing teams of up to 13 people. The dashed bar is my current MSc.</p>
+      </div>
+      <div class="gantt">
+        <div class="g-axis"><div></div><div class="g-years" id="years" aria-hidden="true"></div></div>
+        <div id="rows"></div>
+        <div class="legend">
+          <span><i class="l-it"></i>IT delivery and support</span>
+          <span><i class="l-other"></i>Operations and business roles</span>
+          <span><i class="l-study"></i>Studies</span>
+          <span><i class="l-now"></i>Oct 2026</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-h">
+      <div class="sec-head">
+        <p class="eyebrow">Selected work</p>
+        <h2 id="projects-h">Projects I have delivered</h2>
+        <p>Budgets range from about $80,000 to over $200,000. Each card lists my role and the size of the job.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button type="button" data-filter="all" aria-pressed="true">All projects</button>
+        <button type="button" data-filter="software" aria-pressed="false">Software and apps</button>
+        <button type="button" data-filter="infra" aria-pressed="false">Infrastructure and services</button>
+      </div>
+      <div class="cards" id="cards">
+        <article class="card" data-type="software">
+          <span class="tag">ERP · Microfinance</span>
+          <h3>Microfinance and ERP, phase 1</h3>
+          <p>Rolled out the Mifos microfinance system and connected it to Odoo ERP for accounting. Moved ongoing loans and savings from the client's Excel files into Mifos, and account opening into Odoo.</p>
+          <p class="out"><b>Outcome</b>Positive feedback in the client's closing survey.</p>
+          <dl><dt>Role</dt><dd>Project Manager</dd><dt>Scale</dt><dd>About $150,000 · team of 8</dd><dt>Method</dt><dd>Scrum</dd></dl>
+        </article>
+        <article class="card" data-type="software">
+          <span class="tag">Mobile · Insurance</span>
+          <h3>Mobile app for insurance agents</h3>
+          <p>Built an app for agents' online and offline purchase journeys. It synchronises data with the main contractor's insurance web portal.</p>
+          <dl><dt>Role</dt><dd>Project Manager</dd><dt>Scale</dt><dd>About $100,000 · team of 7</dd></dl>
+        </article>
+        <article class="card" data-type="software">
+          <span class="tag">Healthcare</span>
+          <h3>Hospital management system</h3>
+          <p>Patient queuing, medical records for consultation rooms, and integration with the POS system at cashier and pharmacy counters, for a newly opened hospital in Myanmar.</p>
+          <p class="out"><b>Outcome</b>Closed 3 months before the hospital opened.</p>
+          <dl><dt>Role</dt><dd>Project Manager</dd><dt>Scale</dt><dd>About $120,000 · team of 7</dd></dl>
+        </article>
+        <article class="card" data-type="software">
+          <span class="tag">Mobile · Construction</span>
+          <h3>Operations management app</h3>
+          <p>A mobile app for a construction company's managers to assign work and track it, so supervisors can see status at a glance. Phase 1 ran on Scrum. I shared the Product Owner role with the lead developer and was the Scrum Master.</p>
+          <p class="out"><b>Outcome</b>The client asked me to run it after our previous project together.</p>
+          <dl><dt>Role</dt><dd>Project Manager, Scrum Master</dd><dt>Scale</dt><dd>About 50 users · team of 5</dd><dt>Method</dt><dd>Scrum</dd></dl>
+        </article>
+        <article class="card" data-type="software">
+          <span class="tag">Web · Housing</span>
+          <h3>Regional housing development tracking</h3>
+          <p>A web application for a construction company to collect housing development progress across the Yangon region. Phase 1 delivered.</p>
+          <dl><dt>Role</dt><dd>Project Manager</dd><dt>Scale</dt><dd>About $80,000 · team of 6</dd></dl>
+        </article>
+        <article class="card" data-type="software">
+          <span class="tag">Web · Government</span>
+          <h3>Housing application system</h3>
+          <p>A web application that digitised housing applications so the government could filter applicants by different criteria.</p>
+          <dl><dt>Role</dt><dd>Project Manager</dd><dt>Scale</dt><dd>8,000+ applications</dd></dl>
+        </article>
+        <article class="card" data-type="infra">
+          <span class="tag">Data center</span>
+          <h3>Data center project</h3>
+          <p>Sole coordinator on the Myanmar side, linking the Thailand PMO, the engineering team, the vendor and the customer.</p>
+          <p class="out"><b>Outcome</b>Awarded an additional year of maintenance.</p>
+          <dl><dt>Role</dt><dd>Project Coordinator</dd><dt>Scale</dt><dd>Over $200,000 budget</dd></dl>
+        </article>
+        <article class="card" data-type="infra">
+          <span class="tag">Managed services</span>
+          <h3>Wallet Pay IT managed service</h3>
+          <p>A server room upgrade, management of the NOC team, monthly penetration testing and an outsourced IT support team.</p>
+          <dl><dt>Role</dt><dd>Key Account Manager</dd><dt>Scale</dt><dd>10 people across project and operations</dd></dl>
+        </article>
+      </div>
+    </section>
+
+    <section id="work" aria-labelledby="work-h">
+      <div class="sec-head">
+        <p class="eyebrow">Responsibilities</p>
+        <h2 id="work-h">What I do day to day</h2>
+        <p>The work behind the projects, drawn from my roles at Blue Stone Solution, RITZ, Myanmar Information Technology and A-Host.</p>
+      </div>
+      <div class="duties">
+        <div class="duty">
+          <h3>Plan and track</h3>
+          <ul>
+            <li>Gather requirements and turn them into milestones.</li>
+            <li>Track risks, issues and progress in Excel, Smartsheet and Jira.</li>
+            <li>Follow payment terms and work with accounts on invoicing and receipts.</li>
+            <li>Deliver with Waterfall or Scrum, whichever suits the project.</li>
+          </ul>
+        </div>
+        <div class="duty">
+          <h3>Coordinate people</h3>
+          <ul>
+            <li>Act as the link between client and development team, and clear issues that threaten the deployment date.</li>
+            <li>Lead teams of up to 13 people across engineers, vendors and customers.</li>
+            <li>Keep stakeholders informed with regular meetings and written updates.</li>
+          </ul>
+        </div>
+        <div class="duty">
+          <h3>Test and launch</h3>
+          <ul>
+            <li>Coordinate system setup and support user acceptance testing.</li>
+            <li>Train client teams on new systems.</li>
+            <li>Stay on through go-live and post-production support.</li>
+          </ul>
+        </div>
+        <div class="duty">
+          <h3>Improve how teams work</h3>
+          <ul>
+            <li>Standardised project charters, change requests and business requirement documents.</li>
+            <li>Introduced Smartsheet to cut manual project follow-up.</li>
+            <li>Prepared hardware leasing contracts and proposals, and took part in recruitment.</li>
+            <li>Mentored 2 junior project managers.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-h">
+      <div class="sec-head">
+        <p class="eyebrow">Skills and credentials</p>
+        <h2 id="skills-h">Tools, methods and qualifications</h2>
+      </div>
+      <div class="cred">
+        <div>
+          <h3>Tools</h3>
+          <div class="chips">
+            <span>Microsoft Project</span><span>Visio</span><span>Excel</span><span>Smartsheet</span><span>Trello</span><span>Jira</span><span>Google Suite</span>
+          </div>
+        </div>
+        <div>
+          <h3>Methods and strengths</h3>
+          <div class="chips">
+            <span>Software development lifecycle</span><span>Agile Scrum</span><span>Waterfall</span><span>Leadership</span><span>Coaching</span><span>Communication</span>
+          </div>
+        </div>
+        <div>
+          <h3>Certifications</h3>
+          <ul>
+            <li>Project Management Professional (PMP)<small>PMI</small></li>
+            <li>Professional Scrum Master I<small>Scrum.org</small></li>
+            <li>Certificate in Project Management<small>ICM, UK</small></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Education</h3>
+          <ul>
+            <li>MSc Managing with Data &amp; Artificial Intelligence<small>Grenoble Ecole de Management, France · 2026 to 2027</small></li>
+            <li>BA Linguistics<small>Yangon University of Distance Education, Myanmar · 2016 to 2020</small></li>
+            <li>Diploma in IT (Networking)<small>Republic Polytechnic, Singapore · 2009 to 2012</small></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-h">
+      <div class="contact">
+        <h2 id="contact-h">Let's talk about your project</h2>
+        <p>I am looking for project management roles where data and AI meet delivery work. Reach me by email, phone or LinkedIn.</p>
+        <div class="c-list">
+          <div class="c-item"><span class="lbl">Email</span><span class="val"><a href="mailto:myatmon90@gmail.com" id="v-email">myatmon90@gmail.com</a></span><button class="copy" type="button" data-target="v-email">Copy</button></div>
+          <div class="c-item"><span class="lbl">Phone</span><span class="val" id="v-phone">+33 7 67 73 90 17</span><button class="copy" type="button" data-target="v-phone">Copy</button></div>
+          <div class="c-item"><span class="lbl">LinkedIn</span><span class="val"><a href="https://www.linkedin.com/in/may-myat-mon-584a8654/" id="v-li" target="_blank" rel="noopener">linkedin.com/in/may-myat-mon-584a8654</a></span><button class="copy" type="button" data-target="v-li" data-text="https://www.linkedin.com/in/may-myat-mon-584a8654/">Copy</button></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>May Myat Mon · Project Manager · Portfolio, October 2026</footer>
+</div>
+
+<script>
+(function () {
+  /* Career data: start and end as [year, month]. */
+  var roles = [
+    { co: "JC Consulting", role: "Level 1 Local Support", s: [2013, 9], e: [2014, 11], kind: "it", dates: "Sep 2013 to Nov 2014", note: "Level 1 support for a bank's web application firewall. Trained a payroll service team." },
+    { co: "A-Host International (Myanmar)", role: "Service Consultant", s: [2014, 12], e: [2016, 12], kind: "it", dates: "Dec 2014 to Dec 2016", note: "Coordinated a data center project across the Thailand PMO, vendors and customers." },
+    { co: "Myanmar Information Technology", role: "Project Manager", s: [2017, 1], e: [2018, 4], kind: "it", dates: "Jan 2017 to Apr 2018", note: "Hospital information management project with no major delays." },
+    { co: "RITZ Cyber Security and Intelligence Services", role: "Project Manager / Key Account Manager", s: [2018, 4], e: [2019, 10], kind: "it", dates: "Apr 2018 to Oct 2019", note: "Web apps, infrastructure and managed services. Teams of up to 13." },
+    { co: "Nestenn Menton", role: "Teleconsultant", s: [2020, 2], e: [2020, 9], kind: "other", dates: "Feb 2020 to Sep 2020", note: "Managed 40+ property listings on travel websites." },
+    { co: "myDeli Logistic", role: "Business Development Manager", s: [2020, 11], e: [2021, 2], kind: "other", dates: "Nov 2020 to Feb 2021", note: "Improved status reporting and contributed to a 10% increase in sales." },
+    { co: "Blue Stone Solution", role: "Project Manager", s: [2022, 4], e: [2024, 3], kind: "it", dates: "Apr 2022 to Mar 2024", note: "Microfinance and ERP, and insurance app projects over $150,000." },
+    { co: "Whole Foods Market", role: "Customer Service and E-commerce Supervisor", s: [2025, 2], e: [2026, 8], kind: "other", dates: "Feb 2025 to Aug 2026", note: "Supervised daily e-commerce order fulfilment and team performance." },
+    { co: "Grenoble Ecole de Management", role: "MSc Managing with Data and AI", s: [2026, 9], e: [2027, 6], kind: "study", dates: "2026 to 2027", note: "Applying AI and digital technology to business and project work." }
+  ];
+  var START = 2013, END = 2028, SPAN = END - START;
+  var NOW = 2026 + 9 / 12 + 9 / 365; /* about 9 Oct 2026 */
+  function t0(a) { return a[0] + (a[1] - 1) / 12; }
+  function t1(a) { return a[0] + a[1] / 12; }
+  function pct(t) { return ((t - START) / SPAN * 100).toFixed(3) + "%"; }
+
+  var years = document.getElementById("years");
+  var ticks = [];
+  for (var y = START; y <= 2027; y += 2) ticks.push(y);
+  ticks.forEach(function (y) {
+    var s = document.createElement("span");
+    s.textContent = y;
+    s.style.left = pct(y);
+    years.appendChild(s);
+  });
+
+  var rows = document.getElementById("rows");
+  roles.forEach(function (r) {
+    var row = document.createElement("div");
+    row.className = "g-row";
+    var info = document.createElement("div");
+    info.className = "g-info";
+    var h = document.createElement("h3");
+    h.textContent = r.co;
+    var meta = document.createElement("div");
+    meta.className = "g-meta";
+    meta.textContent = r.role + " · " + r.dates;
+    var note = document.createElement("p");
+    note.className = "g-note";
+    note.textContent = r.note;
+    info.appendChild(h); info.appendChild(meta); info.appendChild(note);
+
+    var track = document.createElement("div");
+    track.className = "g-track";
+    track.setAttribute("aria-hidden", "true");
+    ticks.forEach(function (y) {
+      var tk = document.createElement("i");
+      tk.className = "g-tick";
+      tk.style.left = pct(y);
+      track.appendChild(tk);
+    });
+    var now = document.createElement("i");
+    now.className = "g-now";
+    now.style.left = pct(NOW);
+    track.appendChild(now);
+    var bar = document.createElement("div");
+    bar.className = "g-bar " + r.kind;
+    var a = t0(r.s), b = t1(r.e);
+    bar.style.left = pct(a);
+    bar.style.width = ((b - a) / SPAN * 100).toFixed(3) + "%";
+    track.appendChild(bar);
+
+    row.appendChild(info); row.appendChild(track);
+    rows.appendChild(row);
+  });
+
+  /* Project filter */
+  var buttons = document.querySelectorAll(".filters button");
+  var cards = document.querySelectorAll("#cards .card");
+  buttons.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var f = btn.getAttribute("data-filter");
+      buttons.forEach(function (b) { b.setAttribute("aria-pressed", String(b === btn)); });
+      cards.forEach(function (c) { c.hidden = !(f === "all" || c.getAttribute("data-type") === f); });
+    });
+  });
+
+  /* Copy buttons */
+  function selectNode(n) {
+    try {
+      var rg = document.createRange();
+      rg.selectNodeContents(n);
+      var sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(rg);
+    } catch (e) {}
+  }
+  document.querySelectorAll(".copy").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var node = document.getElementById(btn.getAttribute("data-target"));
+      var text = btn.getAttribute("data-text") || node.textContent.trim();
+      var done = function () {
+        btn.textContent = "Copied";
+        setTimeout(function () { btn.textContent = "Copy"; }, 1600);
+      };
+      var fail = function () {
+        selectNode(node);
+        btn.textContent = "Selected";
+        setTimeout(function () { btn.textContent = "Copy"; }, 1600);
+      };
+      try {
+        navigator.clipboard.writeText(text).then(done, fail);
+      } catch (e) { fail(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
